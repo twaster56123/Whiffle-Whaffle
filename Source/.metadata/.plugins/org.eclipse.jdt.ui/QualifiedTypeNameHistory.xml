@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.swing.JPasswordField"/>
+<fullyQualifiedTypeName name="aMenu.Register"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="java.net.InetAddress"/>
+<fullyQualifiedTypeName name="aData.LoginServerData"/>
+<fullyQualifiedTypeName name="loadHandler.player"/>
+<fullyQualifiedTypeName name="zClient.GameClient"/>
+<fullyQualifiedTypeName name="aData.GameServerData"/>
+<fullyQualifiedTypeName name="zClient.GameClientHandler"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="aData.view"/>
+<fullyQualifiedTypeName name="aData.general"/>
+<fullyQualifiedTypeName name="aData.saveFile"/>
+<fullyQualifiedTypeName name="entities.aYourPlayer"/>
+<fullyQualifiedTypeName name="aData.GameClientData"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="entities.Player"/>
+<fullyQualifiedTypeName name="aData.entityImages"/>
+<fullyQualifiedTypeName name="aaMapEngine.saveFile"/>
+<fullyQualifiedTypeName name="aaMapEngine.Map"/>
+</qualifiedTypeNameHistroy>

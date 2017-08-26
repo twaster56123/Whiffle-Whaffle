@@ -1,0 +1,158 @@
+package zClient;
+
+import entities.Player;
+import entities.aYourPlayer;
+import aData.GameClientData;
+import aData.GameServerData;
+import aData.general;
+
+public class GameClientHandler extends GameClientData{
+
+	private volatile boolean whileReading=false;
+	
+	private volatile int optimize=200;
+	
+	public void process(){
+		
+		new Thread(new Runnable(){public void run(){
+			double time1=0;
+			double time2=0;
+			double delta=0;
+			double up=0;
+			while(true){
+				time1=System.nanoTime();
+				delta=(time1-time2)/1000000000.0;
+				up=1/delta;
+				try{
+					if(general.mode=="game" && !whileReading){
+						if(up<=optimize){
+							update();
+							Thread.sleep(20);
+							time2=time1;
+						}
+					}else{
+						Thread.sleep(1);
+					}
+				}catch(Exception ex){
+//					System.err.println("GCH UPDATE: "+ex.getLocalizedMessage());
+				}
+			}
+		}}).start();
+		
+		new Thread(new Runnable(){public void run(){
+			while(true){
+				try{
+
+					if(general.mode=="game"){
+						read();
+					}else{
+						Thread.sleep(1);
+					}
+				}catch(Exception ex){
+//					System.err.println("GCH READ: "+ex.getLocalizedMessage());
+				}
+			}
+		}}).start();
+		
+	}
+	
+	public void read(){
+		
+		String in = gameClient.getInput();
+		whileReading=true;
+		final String[] list = in.split(":");
+		
+		//Its possible right??!?!
+		if(list[0].equals("Username")){
+			int id = Integer.parseInt(list[1]);
+			if(players[id]==null){
+				players[id] = new Player();
+			}
+			players[id].username=list[2];
+			if(players[id].username.equals("//toBeRemoved//")){
+				players[id]=null;
+			}
+		}
+				
+		if(list[0].equals("Health")){
+			int id = Integer.parseInt(list[1]);
+			players[id].health=Integer.parseInt(list[2]);
+		}
+				
+		if(list[0].equals("MaxHealth")){
+			int id = Integer.parseInt(list[1]);
+			players[id].maxHealth=Integer.parseInt(list[2]);
+		}
+				
+		if(list[0].equals("Position")){
+			int id = Integer.parseInt(list[1]);
+			players[id].x=Integer.parseInt(list[2]);
+			players[id].y=Integer.parseInt(list[3]);
+		}
+				
+/*		if(list[0].equals("Y")){
+			int id = Integer.parseInt(list[1]);
+			players[id].y=Integer.parseInt(list[2]);
+		}
+*/				
+		if(list[0].equals("Anim")){
+			int id = Integer.parseInt(list[1]);
+			players[id].anim=Double.parseDouble(list[2]);
+		}
+		
+		whileReading=false;
+		
+	}
+	
+	private String lastUsername;
+	private int lastHealth;
+	private int lastMaxHealth;
+	private int lastX=0;
+	private int lastY=0;
+	private double lastAnim;
+	private boolean firstTime=true;
+	
+	public void update(){
+		
+		//Username change (unlikely but go with the flow)
+		if(!aYourPlayer.username.equals(lastUsername)){
+			gameClient.send("Username:"+aYourPlayer.id+":"+aYourPlayer.username);
+			System.out.println("send "+aYourPlayer.id);
+			lastUsername=aYourPlayer.username;
+		}
+			
+		//Health Change
+		if(aYourPlayer.health!=lastHealth){
+			gameClient.send("Health:"+aYourPlayer.id+":"+aYourPlayer.health);
+			lastHealth=aYourPlayer.health;
+		}
+			
+		//Max Health Change
+		if(aYourPlayer.maxHealth!=lastMaxHealth){
+			gameClient.send("MaxHealth:"+aYourPlayer.id+":"+aYourPlayer.maxHealth);
+			lastMaxHealth=aYourPlayer.maxHealth;
+		}
+			
+		//X Change
+		if(aYourPlayer.x!=lastX || aYourPlayer.y!=lastY){
+			gameClient.send("Position:"+aYourPlayer.id+":"+aYourPlayer.x+":"+aYourPlayer.y);
+			lastX=aYourPlayer.x;
+			lastY=aYourPlayer.y;
+		}
+			
+/*		//Y Change
+		if(aYourPlayer.y!=lastY){
+			gameClient.send("Y:"+aYourPlayer.id+":"+aYourPlayer.y);
+			lastY=aYourPlayer.y;
+		}
+*/
+		
+		//Anim Change
+		if(aYourPlayer.anim!=lastAnim){
+			gameClient.send("Anim:"+aYourPlayer.id+":"+aYourPlayer.anim);
+			lastAnim=aYourPlayer.anim;
+		}
+		
+	}
+	
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="C:\Program Files (x86)\eclipse 64 bit\jre" version="1.7.0_04">
+<bootpath>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\resources.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\rt.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\jce.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\jfr.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\Program Files (x86)\eclipse 64 bit" version="1.7.0_04">
+<bootpath>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\resources.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\rt.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\jce.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\jfr.jar"/>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files (x86)\eclipse 64 bit\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

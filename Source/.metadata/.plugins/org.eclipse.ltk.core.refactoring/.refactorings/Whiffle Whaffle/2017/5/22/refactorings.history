@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;aMenu.JTextField&apos; to &apos;TextField&apos;&#x0D;&#x0A;- Original project: &apos;Whiffle Whaffle&apos;&#x0D;&#x0A;- Original element: &apos;aMenu.JTextField&apos;&#x0D;&#x0A;- Renamed element: &apos;aMenu.TextField&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;JTextField&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;aMenu{JTextField.java[JTextField" matchStrategy="1" name="TextField" qualified="false" references="true" similarDeclarations="false" stamp="1495998215218" textual="false" version="1.0"/>
+</session>
